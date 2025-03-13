@@ -1,0 +1,41 @@
+{
+  
+    "name": "FarmSales",
+    "short_name": "FarmSales",
+    "theme_color": "#1f1faa",
+    "background_color": "#040607",
+    "display": "standalone",
+    "scope": "/",
+    "start_url": "/",
+    "icons": [
+      {
+       
+        "src": "maskable.png",
+        "sizes": "853x853",
+        "type": "image/png",
+        "purpose": "maskable"
+      },
+   
+      {
+        "src":"logo192.png",
+        "sizes":"192X192",
+        "type": "image/png"
+      },
+      {
+        "src":"logo256.png",
+        "sizes":"256X256",
+        "type": "image/png"
+      },
+      {
+        "src":"logo384.png",
+        "sizes":"384X384",
+        "type": "image/png"
+      },
+      {
+        "src":"logo512.png",
+        "sizes":"512X512",
+        "type": "image/png"
+      }
+  ]
+
+}
