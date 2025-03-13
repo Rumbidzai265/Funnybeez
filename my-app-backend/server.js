@@ -83,6 +83,48 @@ app.post('/api/submissions', async (req, res) => {
     }
 });
 
+// Analyze message using OpenAI API
+app.post('/api/analyze', async (req, res) => {
+    const { message } = req.body;
+    const apiKey = process.env.OPENAI_API_KEY; // Use the environment variable
+    const maxRetries = 5;
+    let attempt = 0;
+
+    while (attempt < maxRetries) {
+        try {
+            const response = await axios.post(
+                'https://api.openai.com/v1/chat/completions',
+                {
+                    model: 'gpt-3.5-turbo',
+                    messages: [{ role: 'user', content: message }],
+                },
+                {
+                    headers: {
+                        'Authorization': `Bearer ${apiKey}`,
+                        'Content-Type': 'application/json',
+                    },
+                }
+            );
+
+            const analysis = response.data.choices[0].message.content;
+            return res.status(200).json({ success: true, analysis });
+        } catch (error) {
+            if (error.response && error.response.status === 429) {
+                // Retry after a delay
+                attempt++;
+                const retryAfter = error.response.headers['retry-after'] || 1; // Fallback to 1 second
+                console.log(`Rate limit hit, retrying in ${retryAfter} seconds...`);
+                await new Promise(resolve => setTimeout(resolve, retryAfter * 1000));
+            } else {
+                console.error('Error contacting OpenAI:', error);
+                return res.status(500).json({ success: false, error: 'Failed to analyze message' });
+            }
+        }
+    }
+
+    return res.status(429).json({ success: false, error: 'Too many requests, please try again later.' });
+});
+
 // Start the server
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
