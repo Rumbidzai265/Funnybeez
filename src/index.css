@@ -1,0 +1,104 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
+  margin: 0;
+  background-color: #f0f0f0; /* Light background color */
+}
+
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center items horizontally */
+  margin-top: 20px; /* Space from the navbar */
+  padding: 20px; /* Padding around the container */
+}
+
+h1, h2 {
+  margin: 20px 0; /* Space around headings */
+}
+
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  background: #fff; /* White background for the form */
+  padding: 30px; /* Padding around the form */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.container {
+  margin-top: 20px; /* Space between fields */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%; /* Full width */
+}
+
+.text {
+  color: blue;
+  font-size: 24px; /* Adjusted font size */
+  font-weight: 700;
+}
+
+.input {
+  width: 300px; /* Adjusted input width */
+  padding: 10px; /* Padding inside inputs */
+  margin-top: 5px; /* Space between label and input */
+  border: 1px solid #ccc; /* Light border */
+  border-radius: 4px; /* Rounded corners */
+  background: #eaeaea; /* Light background for inputs */
+}
+
+input:focus, textarea:focus {
+  border-color: blue; /* Highlight border on focus */
+  outline: none; /* Remove default outline */
+}
+
+button {
+  margin-top: 20px; /* Space above the button */
+  padding: 10px 20px; /* Padding inside the button */
+  background-color: blue; /* Button background color */
+  color: white; /* Text color */
+  border: none; /* No border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+}
+
+button:hover {
+  background-color: darkblue; /* Darker shade on hover */
+}
+
+.page-content {
+  width: 100%; /* Full width */
+  max-width: 600px; /* Max width for better readability */
+  text-align: center; /* Center text */
+  margin: 20px 0; /* Vertical margin */
+}
+.navbar {
+  display: flex;
+  flex-direction: column; /* Stack links vertically */
+  align-items: center; /* Center links horizontally */
+  margin: 20px 0; /* Margin above and below the navbar */
+}
+
+.nav-link {
+  margin: 10px; /* Space between links */
+  text-decoration: none; /* Remove underline */
+  color: blue; /* Link color */
+  font-size: 18px; /* Font size for links */
+}
+
+.nav-link:hover {
+  color: darkblue; /* Change color on hover */
+}
