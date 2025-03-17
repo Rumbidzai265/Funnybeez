@@ -7,7 +7,7 @@ import FarmSales from './Pages/FarmSales';
 import { submitFormData, fetchFarmSales } from './api'; // Import your API functions
 import './App.css';
 
-axios.defaults.baseURL = "http://localhost:8021/";
+axios.defaults.baseURL = "https://b5e0-41-220-16-98.ngrok-free.app/";
 
 const App = () => {
     const [formData, setFormData] = useState(null);

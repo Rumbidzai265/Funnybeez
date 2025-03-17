@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = "http://localhost:8021/api/";
+const API_URL = "https://b5e0-41-220-16-98.ngrok-free.app/api/";
 
 // Function to submit form data
 export const submitFormData = async (formData) => {
